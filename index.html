@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập Tin học – Luyện tập & Vận dụng</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef2f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #3498db;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header>BÀI TẬP TIN HỌC – FORM LUYỆN TẬP & VẬN DỤNG</header>
+
+<!-- MENU -->
+<div class="menu">
+  <a href="#" onclick="showForm('lt')">Luyện tập</a>
+  <a href="#" onclick="showForm('vd')">Vận dụng</a>
+</div>
+
+<!-- IFRAME HIỂN THỊ FORM -->
+<iframe id="displayFrame"></iframe>
+
+<script>
+function showForm(type) {
+  let iframe = document.getElementById("displayFrame");
+
+  if (type === "lt") {
+    iframe.srcdoc = `
+      <h2 style='color:#2c3e50;'>Luyện tập – Form đơn giản</h2>
+      <form style='font-size:18px;'>
+        Họ và tên:<br>
+        <input type='text'><br><br>
+
+        Email:<br>
+        <input type='email'><br><br>
+
+        Sở thích:<br>
+        <input type='checkbox'> Âm nhạc 
+        <input type='checkbox'> Thể thao 
+        <input type='checkbox'> Đọc sách<br><br>
+
+        <button>Gửi</button>
+      </form>
+    `;
+  }
+
+  if (type === "vd") {
+    iframe.srcdoc = `
+      <h2 style='color:#2c3e50;'>Vận dụng – Form đăng ký thành viên</h2>
+      <form style='font-size:18px;'>
+        Họ và tên:<br>
+        <input type='text' required><br><br>
+
+        Email:<br>
+        <input type='email' required><br><br>
+
+        Ngày sinh:<br>
+        <input type='date' required><br><br>
+
+        Loại hình thành viên:<br>
+        <select>
+          <option>Thành viên cơ bản</option>
+          <option>Thành viên cao cấp</option>
+        </select><br><br>
+
+        <button>Đăng ký</button>
+      </form>
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
